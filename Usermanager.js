@@ -12,12 +12,8 @@ function UserManager() {
         friends: new Array()
 	}
 	
-	function getuser(userid) {
-		var user=null;
-		if(!userid) {
-			user =  userstore.getUserById(userid)
-		}		
-		return user;
+	function getuser(userid) {	
+			return  userstore.getUserById(userid)
 	}
 	
 	// return [] User objects
@@ -31,12 +27,8 @@ function UserManager() {
 	}
 
 	// return User object or null
-	function getuserbyname(username) {
-		var user=null;
-		if(!username) {
-			user =  userstore.getUserByName(username)
-		}		
-		return user;
+	function getuserbyname(username) {		
+		return  userstore.getUserByName(username)
 	}
 	
 	// returns User object 
