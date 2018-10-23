@@ -3,7 +3,6 @@ const UM = require('./Usermanager.js')
 if (typeof localStorage === "undefined" || localStorage === null) {
 	var LocalStorage = require('node-localstorage').LocalStorage;
 	localStorage = new LocalStorage('./scratch');
-//	localStorage.clear;
   }
    
   
@@ -18,20 +17,20 @@ function LoginManager() {
 
 	// Return User object
 	function signup(user) {
-		var uo = UM.createUser(user);
-		//var uo = user;
-		localStorage.setItem('userObj',uo);
-		return uo;
+		var userObj = UM.createUser(user);
+		//var userObj = user;
+		localStorage.setItem('userObj',userObj);
+		return userObj;
 		
 	}
 
 	// Return User object or null
 	function signin(username) {
 
-		var uo = UM.getuserbyname(username);
-		//var uo = {name:username};
-		localStorage.setItem('userObj',uo);
-		return uo;
+		var userObj = UM.getuserbyname(username);
+		//var userObj = {name:username};
+		localStorage.setItem('userObj',userObj);
+		return userObj;
 	}
 
 	this.getCurrentUser = getcurrentuser
