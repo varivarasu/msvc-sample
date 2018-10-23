@@ -6,14 +6,14 @@ function UserManager() {
 	// returns User object
 
 	function user(){
-		id:string
-		name:string
+		id:String
+		name:String
         createdAt:new Date().getTime()
         friends: new Array()
 	}
 	
 	function getuser(userid) {
-		const user=null;
+		var user=null;
 		if(!userid) {
 			user =  userstore.getUserById(userid)
 		}		
@@ -30,7 +30,6 @@ function UserManager() {
 		var newUser = userstore.createUser(user)
 		if(user.friends.length>0)
 		{
-
 			user.friends.map(function (friend){
 				return userstore.makeFriend(newUser.id,friend.id)
 			})
@@ -45,7 +44,7 @@ function UserManager() {
 
 	// return User object or null
 	function getuserbyname(username) {
-		const user=null;
+		var user=null;
 		if(!username) {
 			user =  userstore.getUserByName(username)
 		}		
@@ -56,8 +55,8 @@ function UserManager() {
 	function addfriends(userid, users) {
 		if(users.friends.length>0)
 		{
-			user.friends.map(function (friend){
-				return userstore.makeFriend(newUser.id,friend.id)
+			users.friends.map(function (friend){
+				return userstore.makeFriend(userid,friend.id)
 			})
 		}
 		return userstore.getUser(userid);

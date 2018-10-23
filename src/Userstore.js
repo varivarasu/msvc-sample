@@ -19,7 +19,8 @@ function UserStore() {
 
 	// Returns Array of User objects
 	function getallusers() {
-		return userArray
+		// return userArray
+		return [{id:1,name:'Arun'},{id:2,name:'Varadha'},{id:3,name:'Vasu'},{id:4,name:'Thiva'}];
 	}
 
 	// Returns User object	
@@ -35,6 +36,7 @@ function UserStore() {
 
 	// Returns true or false
 	function makefriend(user1id, user2id) {
+		var user1,user2;
 		user1 = getuserbyid(user1id)
 		user2 = getuserbyid(user2id)
 		
