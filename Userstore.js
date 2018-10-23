@@ -1,5 +1,5 @@
 ﻿// This is a mock UserStore, to be replaced later
-//
+
 function UserStore() {
 	var idsequence = 0
 
@@ -9,7 +9,11 @@ function UserStore() {
 	function createuser(user) {
 		user.id = idsequence
 		idsequence++
-		userArray.insert(user)
+		user.createdAt = new Date()
+		if(!user.friends) 
+			user.friends = []
+
+		userArray.push(user)
 		return user
 	}
 
@@ -26,7 +30,7 @@ function UserStore() {
 	// Returns User object or null
 	function getuserbyname(username) {
 
-		return userArray.find( user => user. name === username ) 
+		return userArray.find( user => user.name === username ) 
 	}
 
 	// Returns true or false
@@ -34,11 +38,14 @@ function UserStore() {
 		user1 = getuserbyid(user1id)
 		user2 = getuserbyid(user2id)
 		
+		if((!user1) || (!user2))
+			return false
+
 		if(!user1.friends.includes(user2))
-			user1.friends.insert(user2)
+			user1.friends.push(user2)
 
 		if(!user2.friends.includes(user1))
-			user2.friends.insert(user1)
+			user2.friends.push(user1)
 
 		return true
 	}
