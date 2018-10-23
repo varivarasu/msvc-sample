@@ -6,18 +6,14 @@ function UserManager() {
 	// returns User object
 
 	function user(){
-		id:string
-		name:string
+		id:String
+		name:String
         createdAt:new Date().getTime()
         friends: new Array()
 	}
 	
-	function getuser(userid) {
-		const user=null;
-		if(!userid) {
-			user =  userstore.getUserById(userid)
-		}		
-		return user;
+	function getuser(userid) {	
+			return  userstore.getUserById(userid)
 	}
 	
 	// return [] User objects
@@ -27,40 +23,23 @@ function UserManager() {
 
 	// returns User object
 	function createuser(user) {
-		var newUser = userstore.createUser(user)
-		if(user.friends.length>0)
-		{
-
-			user.friends.map(function (friend){
-				return userstore.makeFriend(newUser.id,friend.id)
-			})
-
-			// for (var i=0; i<user.friends.length; i++) {
-			// 	var newFriend = user.friends[i];
-			// 	userstore.makeFriend(newUser.id,newFriend.id)
-			// }
-		}
-		return newUser;
+		return userstore.createUser(user)
 	}
 
 	// return User object or null
-	function getuserbyname(username) {
-		const user=null;
-		if(!username) {
-			user =  userstore.getUserByName(username)
-		}		
-		return user;
+	function getuserbyname(username) {		
+		return  userstore.getUserByName(username)
 	}
 	
 	// returns User object 
 	function addfriends(userid, users) {
-		if(users.friends.length>0)
-		{
-			user.friends.map(function (friend){
-				return userstore.makeFriend(newUser.id,friend.id)
+		// if(users.friends.length>0)
+		// {
+			users.map(function (friend){
+				return userstore.makeFriend(userid,friend.id)
 			})
-		}
-		return userstore.getUser(userid);
+		// }
+		return userstore.getUserById(userid);
 	}
 
 	this.getUser = getuser
