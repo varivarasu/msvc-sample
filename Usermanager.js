@@ -1,4 +1,4 @@
-﻿const userstore = require('./Userstore')
+﻿﻿const userstore = require('./Userstore.js')
 
 function UserManager() {
 	// User Object looks like this
@@ -19,17 +19,36 @@ function UserManager() {
 
 	// returns User object
 	function createuser(user) {
-
+		var newUser = userstore.createUser(user)
+		if(user.friends.length>0)
+		{
+			for (var i=0; i<user.friends.length; i++) {
+				var newFriend = user.friends[i];
+				userstore.makeFriend(newUser.id,newFriend.id)
+			}
+		}
+		return newUser;
 	}
 
 	// return User object or null
 	function getuserbyname(username) {
-
+		const user=null;
+		if(!username) {
+			user =  userstore.getUserByName(username)
+		}		
+		return user;
 	}
 	
 	// returns User object 
 	function addfriends(userid, users) {
-
+		if(users.friends.length>0)
+		{
+			for (var i=0; i<users.friends.length; i++) {
+				var newFriend = users.friends[i];
+				userstore.makeFriend(userid,newFriend.id)
+			}
+		}
+		return userstore.getUser(userid);
 	}
 
 	this.getUser = getuser
