@@ -27,7 +27,7 @@ function LoginManager() {
 	// Return User object or null
 	function signin(username) {
 
-		var userObj = UM.getuserbyname(username);
+		var userObj = UM.getUserByName(username);
 		//var userObj = {name:username};
 		localStorage.setItem('userObj',JSON.stringify(userObj));
 		return userObj;
