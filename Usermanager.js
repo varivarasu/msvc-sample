@@ -27,19 +27,7 @@ function UserManager() {
 
 	// returns User object
 	function createuser(user) {
-		var newUser = userstore.createUser(user)
-		if(user.friends.length>0)
-		{
-			user.friends.map(function (friend){
-				return userstore.makeFriend(newUser.id,friend.id)
-			})
-
-			// for (var i=0; i<user.friends.length; i++) {
-			// 	var newFriend = user.friends[i];
-			// 	userstore.makeFriend(newUser.id,newFriend.id)
-			// }
-		}
-		return newUser;
+		return userstore.createUser(user)
 	}
 
 	// return User object or null
