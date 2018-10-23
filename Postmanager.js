@@ -1,6 +1,6 @@
 const um = require("./Usermanager.js")
 const ps = require('./poststore.js')
-const lm = require('./LoginManager.js')
+//const lm = require('./LoginManager.js')
 
 function PostManager(){
 
