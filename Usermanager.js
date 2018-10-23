@@ -22,10 +22,15 @@ function UserManager() {
 		var newUser = userstore.createUser(user)
 		if(user.friends.length>0)
 		{
-			for (var i=0; i<user.friends.length; i++) {
-				var newFriend = user.friends[i];
-				userstore.makeFriend(newUser.id,newFriend.id)
-			}
+
+			user.friends.map(function (friend){
+				return userstore.makeFriend(newUser.id,friend.id)
+			})
+
+			// for (var i=0; i<user.friends.length; i++) {
+			// 	var newFriend = user.friends[i];
+			// 	userstore.makeFriend(newUser.id,newFriend.id)
+			// }
 		}
 		return newUser;
 	}
@@ -43,10 +48,9 @@ function UserManager() {
 	function addfriends(userid, users) {
 		if(users.friends.length>0)
 		{
-			for (var i=0; i<users.friends.length; i++) {
-				var newFriend = users.friends[i];
-				userstore.makeFriend(userid,newFriend.id)
-			}
+			user.friends.map(function (friend){
+				return userstore.makeFriend(newUser.id,friend.id)
+			})
 		}
 		return userstore.getUser(userid);
 	}
