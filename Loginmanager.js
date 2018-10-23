@@ -20,5 +20,5 @@ function LoginManager() {
 	this.signUp = signup
 	this.signIn = signin
 }
-//Export method
+//export method 
 module.exports = new LoginManager
