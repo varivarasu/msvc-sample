@@ -33,13 +33,13 @@ function UserManager() {
 	
 	// returns User object 
 	function addfriends(userid, users) {
-		if(users.friends.length>0)
-		{
-			users.friends.map(function (friend){
+		// if(users.friends.length>0)
+		// {
+			users.map(function (friend){
 				return userstore.makeFriend(userid,friend.id)
 			})
-		}
-		return userstore.getUser(userid);
+		// }
+		return userstore.getUserById(userid);
 	}
 
 	this.getUser = getuser
