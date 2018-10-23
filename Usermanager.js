@@ -1,9 +1,15 @@
-﻿function UserManager() {
+﻿const userstore = require('./Userstore')
+
+function UserManager() {
 	// User Object looks like this
 	// { id: '1234', name: 'Some Name', createdAt: '12-Oct-2018 11:00:00 AM', friends: [ {User}, {User}... ]
 	// returns User object
 	function getuser(userid) {
-
+		const user=null;
+		if(!userid) {
+			user =  userstore.getUserById(userid)
+		}		
+		return user;
 	}
 	
 	// return [] User objects
