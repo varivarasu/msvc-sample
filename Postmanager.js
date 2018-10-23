@@ -1,7 +1,7 @@
-var um = require("./User.js")
+var um = require("./Usermanager.js")
 
 
-function PostManagement(){
+function PostManager(){
 
     function Post(){
         title:string
@@ -10,7 +10,7 @@ function PostManagement(){
     }
 
     
-function CreatePost(user,post){
+function CreatePost(userid,post){
     post.user = user
     post.timestamp = new Date()
     return post
@@ -27,4 +27,4 @@ this.getTimeline = GetTimeline
 
 }
 
-module.exports = new PostManagement
+module.exports = new PostManager
