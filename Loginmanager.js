@@ -12,14 +12,14 @@ function LoginManager() {
 	// Returns User object
 	
 	function getcurrentuser() {
-		return localStorage.getItem('userObj');
+		return JSON.parse(localStorage.getItem('userObj'));
 	}
 
 	// Return User object
 	function signup(user) {
 		var userObj = UM.createUser(user);
 		//var userObj = user;
-		localStorage.setItem('userObj',userObj);
+		localStorage.setItem('userObj',JSON.stringify(userObj));
 		return userObj;
 		
 	}
@@ -29,7 +29,7 @@ function LoginManager() {
 
 		var userObj = UM.getuserbyname(username);
 		//var userObj = {name:username};
-		localStorage.setItem('userObj',userObj);
+		localStorage.setItem('userObj',JSON.stringify(userObj));
 		return userObj;
 	}
 
