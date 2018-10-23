@@ -29,7 +29,15 @@ function LoginManager() {
 
 		var userObj = UM.getUserByName(username);
 		//var userObj = {name:username};
-		localStorage.setItem('userObj',JSON.stringify(userObj));
+			if ( typeof userObj !== 'undefined'  )
+			{
+			  localStorage.setItem('userObj',JSON.stringify(userObj));
+			}
+			else
+			{
+                           localStorage.clear();
+			}
+		
 		return userObj;
 	}
 
