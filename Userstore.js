@@ -19,8 +19,8 @@ function UserStore() {
 
 	// Returns Array of User objects
 	function getallusers() {
-		// return userArray
-		return [{id:1,name:'Arun'},{id:2,name:'Varadha'},{id:3,name:'Vasu'},{id:4,name:'Thiva'}];
+		 return userArray
+		// return [{id:1,name:'Arun'},{id:2,name:'Varadha'},{id:3,name:'Vasu'},{id:4,name:'Thiva'}];
 	}
 
 	// Returns User object	
