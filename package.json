@@ -4,7 +4,13 @@
   "description": "Sample to understand Microservice architecture",
   "main": "index.js",
   "scripts": {
+    "start": "react-scripts start",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-scripts": "1.1.4"
   },
   "repository": {
     "type": "git",
