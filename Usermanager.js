@@ -24,7 +24,11 @@ function UserManager() {
 
 	// return User object or null
 	function getuserbyname(username) {
-
+		const user=null;
+		if(!username) {
+			user =  userstore.getUserByName(username)
+		}		
+		return user;
 	}
 	
 	// returns User object 
