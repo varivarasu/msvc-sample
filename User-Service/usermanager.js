@@ -1,4 +1,4 @@
-﻿const userstore = require('./Userstore.js')
+﻿const userstore = require('./userstore.js')
 
 function UserManager() {
 	// User Object looks like this
