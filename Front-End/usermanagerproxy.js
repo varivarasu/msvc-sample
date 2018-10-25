@@ -1,5 +1,5 @@
 const axios = require('axios')
-const SERVICEURL = 'http://localhost:4000/api/user/'
+const SERVICEURL = 'http://userservice:4000/api/user/'
 
 function umproxy() {
 

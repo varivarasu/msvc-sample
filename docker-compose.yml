@@ -1,0 +1,13 @@
+version: '2.2'
+
+services:
+  userservice:
+    image: userservice:1.0
+
+  frontendservice:
+    image: frontend:1.0
+    depends_on:
+      - "userservice"
+    ports:
+      - "80:8080"
+      
