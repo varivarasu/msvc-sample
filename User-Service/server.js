@@ -26,7 +26,7 @@ function getuserByNameHandler(req, res, next) {
 }
 
 function postuserHandler(req, res, next) {
-    var uname = req.body.name
+    var uname = req.body.username
     var newuser = UM.createUser({ name: uname })
     res.json(newuser)
 }
@@ -42,5 +42,5 @@ app.post('/api/user', postuserHandler)
 
 
 app.listen(4000, function(req, res){
-    console.log('Server started.')
+    console.log('User-Service Server started.')
 })
